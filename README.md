@@ -1,5 +1,5 @@
 # HotelManage
 软件工程大作业——酒店管理系统
 先运行hotel_manage.sql文件，建数据库
-用户名：user
-密码：password
+|用户名|user|
+|密码|password|
