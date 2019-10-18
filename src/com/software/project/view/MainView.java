@@ -39,7 +39,7 @@ public class MainView extends JFrame{
 	 * Create the frame.
 	 */
 	public MainView() {
-		setTitle("\u6854\u5B50\u9152\u5E97\u7BA1\u7406\u7CFB\u7EDF");
+		setTitle("\u9152\u5E97\u7BA1\u7406\u7CFB\u7EDF");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 709, 628);
 		contentPane = new JPanel();
