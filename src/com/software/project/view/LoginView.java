@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
@@ -18,13 +19,19 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
+import com.software.project.dao.UserDao;
 import com.software.project.model.User;
+import com.software.project.util.DBUtil;
 import com.software.project.util.StringUtil;
+
 
 public class LoginView extends JFrame{
 	private JPanel contentPane;
 	private JTextField userName_text;
 	private JPasswordField password_text;
+	
+	private DBUtil dbUtil=new DBUtil();
+	private UserDao userDao=new UserDao();
 
 	/**
 	 * Launch the application.
@@ -146,6 +153,27 @@ public class LoginView extends JFrame{
 		}
 		User user=new User(userName,password);
 	
+		Connection con=null;
+		try {
+			con=dbUtil.getCon();
+			User currentUser=userDao.login(con, user);
+			if(currentUser!=null){
+				dispose();
+				new MainView().setVisible(true);
+			}else{
+				JOptionPane.showMessageDialog(null, "用户名或者密码错误！");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				dbUtil.closeCon(con);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	
