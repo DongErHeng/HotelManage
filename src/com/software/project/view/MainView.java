@@ -41,23 +41,13 @@ public class MainView extends JFrame{
 	public MainView() {
 		setTitle("\u9152\u5E97\u7BA1\u7406\u7CFB\u7EDF");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 709, 628);
+		setBounds(100, 100, 600, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(MainView.class.getResource("/image/Hotel.png")));
-		
-		JButton btn_staff = new JButton("\u5458\u5DE5\u4FE1\u606F");
-		btn_staff.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent evt) {
-				//btn_staffMouseClicked(evt);
-			}
-
-		});
-		btn_staff.setFont(new Font("华文行楷", Font.PLAIN, 24));
 		
 		JButton btn_client = new JButton("\u987E\u5BA2\u4FE1\u606F");
 		btn_client.addMouseListener(new MouseAdapter() {
@@ -88,38 +78,40 @@ public class MainView extends JFrame{
 
 		});
 		btn_order.setFont(new Font("华文行楷", Font.PLAIN, 24));
+
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(242)
+					.addGap(210)
 					.addComponent(lblNewLabel)
 					.addContainerGap(268, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(55)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(btn_staff)
-						.addComponent(btn_search))
-					.addPreferredGap(ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(btn_order)
-						.addComponent(btn_client))
-					.addGap(74))
+					.addGap(218)
+					.addComponent(btn_search))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(218)
+					.addComponent(btn_order))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(218)
+					.addComponent(btn_client))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel)
-					.addGap(73)
+					.addGap(50)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btn_staff)
 						.addComponent(btn_client))
-					.addPreferredGap(ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btn_search)
+					//.addPreferredGap(ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+					.addGap(25)
+					.addGroup(gl_contentPane.createParallelGroup()
+						.addComponent(btn_search))
+					.addGap(25)
+					.addGroup(gl_contentPane.createParallelGroup()
 						.addComponent(btn_order))
-					.addGap(98))
+				)
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
