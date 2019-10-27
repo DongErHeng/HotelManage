@@ -52,7 +52,7 @@ INSERT INTO `tb_login` VALUES ('user', 'password');
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_order`;
 CREATE TABLE `tb_order` (
-  `order_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `client_id` char(18) CHARACTER SET utf8 NOT NULL,
   `room_id` int(11) NOT NULL,
   `comedate` timestamp NOT NULL DEFAULT '2000-04-01 12:00:00' ON UPDATE CURRENT_TIMESTAMP,
