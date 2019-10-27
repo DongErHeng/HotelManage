@@ -53,7 +53,7 @@ public class MainView extends JFrame{
 		btn_client.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
-				//btn_clientMouseClicked(evt);
+				btn_clientMouseClicked(evt);
 			}
 
 		});
@@ -114,5 +114,15 @@ public class MainView extends JFrame{
 				)
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	/**
+	 * ΩÁ√Ê«–ªª
+	 * @param evt
+	 */
+	private void btn_clientMouseClicked(MouseEvent evt) {
+		// TODO Auto-generated method stub
+		this.setVisible(false);
+		new ClientAddView().setVisible(true);
 	}
 }

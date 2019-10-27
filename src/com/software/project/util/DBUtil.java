@@ -4,20 +4,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
- * Êý¾Ý¿â¹¤¾ßÀà
+ * ï¿½ï¿½ï¿½Ý¿â¹¤ï¿½ï¿½ï¿½ï¿½
  * @author dongerheng
  * 
  */
 public class DBUtil {
 	
 	private String dbUrl="jdbc:mysql://localhost:3306/hotel_manage?"
-			+ "useUnicode=true&characterEncoding=utf8&serverTimezone=GMT";//Êý¾Ý¿âÁ¬½ÓµØÖ·
-	private String dbUserName="root";  //Êý¾Ý¿âµÄÓÃ»§Ãû
-	private String dbPassword="";  //Êý¾Ý¿âµÄÃÜÂë
-	private String jdbcName="com.mysql.cj.jdbc.Driver";  //Çý¶¯Ãû³Æ
+			+ "useUnicode=true&characterEncoding=utf8&serverTimezone=GMT";//ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½Óµï¿½Ö·
+	private String dbUserName="root";  //ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½
+	private String dbPassword="12345678";  //ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String jdbcName="com.mysql.cj.jdbc.Driver";  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	/**
-	 * »ñÈ¡Êý¾Ý¿âÁ¬½Ó
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public Connection getCon()throws Exception{
 		Class.forName(jdbcName);
@@ -25,7 +25,7 @@ public class DBUtil {
 		return con;
 	}
 	/**
-	 * ¹Ø±ÕÊý¾Ý¿âÁ¬½Ó
+	 * ï¿½Ø±ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void closeCon(Connection con)throws Exception{
 		if(con!=null) {
@@ -37,10 +37,10 @@ public class DBUtil {
 		DBUtil dbUtil = new DBUtil();
 		try {
 			dbUtil.getCon();
-			System.out.println("Êý¾Ý¿âÁ¬½Ó³É¹¦£¡");
+			System.out.println("ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½Ó³É¹ï¿½ï¿½ï¿½");
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("Êý¾Ý¿âÁ¬½ÓÊ§°Ü£¡");
+			System.out.println("ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½");
 		}
 	}
 	
