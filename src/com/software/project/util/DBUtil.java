@@ -4,20 +4,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
- * ���ݿ⹤����
+ *数据库工具类
  * @author dongerheng
  * 
  */
 public class DBUtil {
 	
 	private String dbUrl="jdbc:mysql://localhost:3306/hotel_manage?"
-			+ "useUnicode=true&characterEncoding=utf8&serverTimezone=GMT";//���ݿ����ӵ�ַ
-	private String dbUserName="root";  //���ݿ���û���
-	private String dbPassword="12345678";  //���ݿ������
-	private String jdbcName="com.mysql.cj.jdbc.Driver";  //��������
+			+ "useUnicode=true&characterEncoding=utf8&serverTimezone=GMT";//数据库连接地址
+	private String dbUserName="root";  //数据库的用户名
+	private String dbPassword="12345678";  //数据库的密码
+	private String jdbcName="com.mysql.cj.jdbc.Driver";  //驱动名称
 
 	/**
-	 * ��ȡ���ݿ�����
+	 * 获取数据库连接
 	 */
 	public Connection getCon()throws Exception{
 		Class.forName(jdbcName);
@@ -25,7 +25,7 @@ public class DBUtil {
 		return con;
 	}
 	/**
-	 * �ر����ݿ�����
+	 * 关闭数据库连接
 	 */
 	public void closeCon(Connection con)throws Exception{
 		if(con!=null) {
@@ -37,10 +37,10 @@ public class DBUtil {
 		DBUtil dbUtil = new DBUtil();
 		try {
 			dbUtil.getCon();
-			System.out.println("���ݿ����ӳɹ���");
+			System.out.println("数据库连接成功！");
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("���ݿ�����ʧ�ܣ�");
+			System.out.println("数据库连接失败！");
 		}
 	}
 	

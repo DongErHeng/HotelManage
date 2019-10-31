@@ -56,16 +56,16 @@ public class ClientAddView extends JFrame{
         setContentPane(contentPane);
 
         JLabel label = new JLabel("\u8EAB\u4EFD\u8BC1\u53F7\u7801\uFF1A");
-        label.setFont(new Font("�����п�", Font.PLAIN, 18));
+        label.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         JLabel label_1 = new JLabel("\u59D3           \u540D\uFF1A");
-        label_1.setFont(new Font("�����п�", Font.PLAIN, 18));
+        label_1.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         JLabel label_2 = new JLabel("\u6027          \u522B\uFF1A");
-        label_2.setFont(new Font("�����п�", Font.PLAIN, 18));
+        label_2.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         JLabel label_3 = new JLabel("\u5E74          \u9F84\uFF1A");
-        label_3.setFont(new Font("�����п�", Font.PLAIN, 18));
+        label_3.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         id_text = new JTextField();
         id_text.setColumns(10);
@@ -83,7 +83,7 @@ public class ClientAddView extends JFrame{
             }
 
         });
-        btn_add.setFont(new Font("�����п�", Font.PLAIN, 18));
+        btn_add.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         JButton btn_return = new JButton("\u8FD4\u56DE");
         btn_return.addMouseListener(new MouseAdapter() {
@@ -93,13 +93,13 @@ public class ClientAddView extends JFrame{
             }
 
         });
-        btn_return.setFont(new Font("�����п�", Font.PLAIN, 18));
+        btn_return.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         sex_text = new JTextField();
         sex_text.setColumns(10);
 
         JLabel label_4 = new JLabel("\u8054\u7CFB\u65B9\u5F0F\uFF1A");
-        label_4.setFont(new Font("�����п�", Font.PLAIN, 18));
+        label_4.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         tel_text = new JTextField();
         tel_text.setColumns(10);
@@ -112,7 +112,7 @@ public class ClientAddView extends JFrame{
             }
 
         });
-        btn_order.setFont(new Font("�����п�", Font.PLAIN, 18));
+        btn_order.setFont(new Font("华文行楷", Font.PLAIN, 18));
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
         gl_contentPane.setHorizontalGroup(
                 gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -207,7 +207,7 @@ public class ClientAddView extends JFrame{
 
     /**
      * 客户信息增加
-     * @param e
+     * @param evt
      */
     private void btn_addActionPerformed(ActionEvent evt) {
         // TODO Auto-generated method stub

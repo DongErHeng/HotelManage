@@ -90,7 +90,6 @@ public class OrderAddView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                 btn_addActionPerformed(evt);
             }
-
         });
         btn_add.setFont(new Font("华文行楷", Font.PLAIN, 22));
 
@@ -100,7 +99,6 @@ public class OrderAddView extends JFrame {
             public void mouseClicked(MouseEvent evt) {
                 btn_returnMouseClicked(evt);
             }
-
         });
         btn_return.setFont(new Font("华文行楷", Font.PLAIN, 22));
 
