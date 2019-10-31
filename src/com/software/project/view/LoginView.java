@@ -138,7 +138,7 @@ public class LoginView extends JFrame{
 	
 	/**
 	 * 登录事件处理
-	 * @param e
+	 * @param evt
 	 */
 	private void loginActionPerformed(ActionEvent evt) {
 		String userName=this.userName_text.getText();

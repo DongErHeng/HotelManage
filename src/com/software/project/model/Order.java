@@ -12,6 +12,12 @@ public class Order {
 		super();
 	}
 
+	public Order(String client_id, int room_id) {
+		super();
+		this.client_id = client_id;
+		this.room_id = room_id;
+	}
+
 	public Order(String client_id, int room_id, String comedate, int days, String leavedate) {
 		super();
 		this.client_id = client_id;

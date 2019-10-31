@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
 public class MainView extends JFrame{
@@ -63,7 +62,7 @@ public class MainView extends JFrame{
 		btn_search.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
-				//btn_searchMouseClicked(evt);
+				btn_searchMouseClicked(evt);
 			}
 
 		});
@@ -73,7 +72,7 @@ public class MainView extends JFrame{
 		btn_order.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
-				//btn_orderMouseClicked(evt);
+				btn_orderMouseClicked(evt);
 			}
 
 		});
@@ -124,5 +123,16 @@ public class MainView extends JFrame{
 		// TODO Auto-generated method stub
 		this.setVisible(false);
 		new ClientAddView().setVisible(true);
+	}
+
+	private void btn_searchMouseClicked(MouseEvent evt) {
+		this.setVisible(false);
+		new RoomView().setVisible(true);
+	}
+
+	private void btn_orderMouseClicked(MouseEvent evt) {
+		// TODO Auto-generated method stub
+		this.setVisible(false);
+		new OrderView().setVisible(true);
 	}
 }
