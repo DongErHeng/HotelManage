@@ -13,7 +13,7 @@ public class DBUtil {
 	private String dbUrl="jdbc:mysql://localhost:3306/hotel_manage?"
 			+ "useUnicode=true&characterEncoding=utf8&serverTimezone=GMT";//数据库连接地址
 	private String dbUserName="root";  //数据库的用户名
-	private String dbPassword="12345678";  //数据库的密码
+	private String dbPassword="";  //数据库的密码
 	private String jdbcName="com.mysql.cj.jdbc.Driver";  //驱动名称
 
 	/**
