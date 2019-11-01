@@ -94,7 +94,7 @@ public class RoomView extends JFrame {
             }
 
         });
-        btn_return.setFont(new Font("华文行楷", Font.PLAIN, 18));
+        btn_return.setFont(new Font("华文行楷", Font.PLAIN, 28));
 
         rtype_text = new JTextField();
         rtype_text.setColumns(10);
@@ -139,7 +139,7 @@ public class RoomView extends JFrame {
                                 .addGap(19)
                                 .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 311, GroupLayout.PREFERRED_SIZE)
                                 .addGap(21)
-                                .addComponent(btn_return, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_return)
                                 .addContainerGap())
         );
 

@@ -72,13 +72,13 @@ public class OrderView extends JFrame {
     public OrderView() {
         setTitle("\u9000\u6362\u623F\u95F4\u5904\u7406");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 808, 637);
+        setBounds(100, 100, 778, 600);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
 
         JLabel label = new JLabel("\u6362\u623F\u5904\u7406");
-        label.setForeground(new Color(138, 43, 226));
+        //label.setForeground(new Color(138, 43, 226));
         label.setFont(new Font("华文行楷", Font.PLAIN, 28));
 
         JLabel lblNewLabel = new JLabel("\u8EAB\u4EFD\u8BC1\u53F7\uFF1A");
@@ -136,8 +136,7 @@ public class OrderView extends JFrame {
             }
 
         });
-        btn_update.setForeground(new Color(30, 144, 255));
-        btn_update.setFont(new Font("华文行楷", Font.PLAIN, 20));
+        btn_update.setFont(new Font("华文行楷", Font.PLAIN, 22));
 
         JButton btn_return = new JButton("\u8FD4\u56DE");
         btn_return.addMouseListener(new MouseAdapter() {
@@ -147,7 +146,7 @@ public class OrderView extends JFrame {
             }
 
         });
-        btn_return.setFont(new Font("华文行楷", Font.PLAIN, 18));
+        btn_return.setFont(new Font("华文行楷", Font.PLAIN, 22));
 
         JButton btn_delete = new JButton("\u9000\u623F");
         btn_delete.addActionListener(new ActionListener() {
@@ -156,7 +155,6 @@ public class OrderView extends JFrame {
             }
         });
 
-        btn_delete.setForeground(new Color(255, 20, 147));
         btn_delete.setFont(new Font("华文行楷", Font.PLAIN, 22));
         exdate_text = new JTextField();
         exdate_text.setColumns(10);
@@ -180,7 +178,7 @@ public class OrderView extends JFrame {
                                 .addComponent(rid_text, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                                 .addComponent(btn_search)
-                                .addGap(24))
+                                .addGap(69))
                         .addGroup(gl_contentPane.createSequentialGroup()
                                 .addGap(31)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -201,24 +199,26 @@ public class OrderView extends JFrame {
                                                                         .addComponent(cid_text, GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
                                                         .addGroup(gl_contentPane.createSequentialGroup()
                                                                 .addGap(72)
-                                                                .addComponent(btn_delete)))
+                                                                .addComponent(btn_delete, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)))
                                                 .addPreferredGap(ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
                                                         .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
                                                                 .addGroup(gl_contentPane.createSequentialGroup()
                                                                         .addComponent(label_5)
                                                                         .addPreferredGap(ComponentPlacement.RELATED)
-                                                                        .addComponent(exday_text))
+                                                                        .addComponent(exday_text)
+                                                                        .addGap(69))
                                                                 .addGroup(gl_contentPane.createSequentialGroup()
                                                                         .addComponent(label_3)
                                                                         .addPreferredGap(ComponentPlacement.RELATED)
-                                                                        .addComponent(rid_text1, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)))
+                                                                        .addComponent(rid_text1, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
+                                                                        .addGap(69)))
                                                         .addGroup(gl_contentPane.createSequentialGroup()
-                                                                .addComponent(btn_return)
+                                                                .addComponent(btn_return, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(69))
                                                         .addGroup(gl_contentPane.createSequentialGroup()
                                                                 .addComponent(btn_update, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(119)))))
+                                                                .addGap(319)))))
                                 .addContainerGap(43, Short.MAX_VALUE))
                         .addGroup(gl_contentPane.createSequentialGroup()
                                 .addGap(289)
@@ -255,14 +255,15 @@ public class OrderView extends JFrame {
                                                 .addComponent(exday_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
                                 .addGap(37)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-                                        .addComponent(btn_update, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
                                                 .addComponent(label_6)
                                                 .addComponent(leave_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(ComponentPlacement.UNRELATED)
+                                .addGap(37)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-                                        .addComponent(btn_return)
-                                        .addComponent(btn_delete, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btn_return, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_update, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_delete, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
                                 .addGap(26))
         );
 

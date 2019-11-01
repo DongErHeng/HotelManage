@@ -50,7 +50,7 @@ public class ClientAddView extends JFrame{
     public ClientAddView() {
         setTitle("\u9152\u5E97\u7BA1\u7406\u7CFB\u7EDF");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 589, 476);
+        setBounds(100, 100, 580, 450);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -61,10 +61,10 @@ public class ClientAddView extends JFrame{
         JLabel label_1 = new JLabel("\u59D3           \u540D\uFF1A");
         label_1.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
-        JLabel label_2 = new JLabel("\u6027          \u522B\uFF1A");
+        JLabel label_2 = new JLabel("\u6027           \u522B\uFF1A");
         label_2.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
-        JLabel label_3 = new JLabel("\u5E74          \u9F84\uFF1A");
+        JLabel label_3 = new JLabel("\u5E74           \u9F84\uFF1A");
         label_3.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         id_text = new JTextField();
@@ -98,7 +98,7 @@ public class ClientAddView extends JFrame{
         sex_text = new JTextField();
         sex_text.setColumns(10);
 
-        JLabel label_4 = new JLabel("\u8054\u7CFB\u65B9\u5F0F\uFF1A");
+        JLabel label_4 = new JLabel("\u8054 \u7CFB \u65B9 \u5F0F \uFF1A");
         label_4.setFont(new Font("华文行楷", Font.PLAIN, 18));
 
         tel_text = new JTextField();
@@ -113,46 +113,43 @@ public class ClientAddView extends JFrame{
 
         });
         btn_order.setFont(new Font("华文行楷", Font.PLAIN, 18));
+
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
         gl_contentPane.setHorizontalGroup(
                 gl_contentPane.createParallelGroup(Alignment.TRAILING)
                         .addGroup(gl_contentPane.createSequentialGroup()
-                                .addGap(67)
+                                .addGap(50)
                                 .addComponent(btn_add, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
-                                .addComponent(btn_return)
+                                .addComponent(btn_order)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                                .addComponent(btn_return, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE)
                                 .addGap(109))
                         .addGroup(gl_contentPane.createSequentialGroup()
                                 .addGap(50)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
                                         .addGroup(gl_contentPane.createSequentialGroup()
-                                                .addComponent(label_4)
-                                                .addGap(18)
-                                                .addComponent(tel_text, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
-                                                .addGap(130))
-                                        .addGroup(gl_contentPane.createSequentialGroup()
                                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-                                                        .addGroup(gl_contentPane.createSequentialGroup()
-                                                                .addComponent(label_3)
-                                                                .addGap(18)
-                                                                .addComponent(age_text, GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))
-                                                        .addGroup(gl_contentPane.createSequentialGroup()
-                                                                .addComponent(label_2)
-                                                                .addGap(18)
-                                                                .addComponent(sex_text, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE))
                                                         .addGroup(gl_contentPane.createSequentialGroup()
                                                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
                                                                         .addComponent(label)
-                                                                        .addComponent(label_1))
+                                                                        .addComponent(label_1)
+                                                                        .addComponent(label_2)
+                                                                        .addComponent(label_3)
+                                                                        .addComponent(label_4))
                                                                 .addPreferredGap(ComponentPlacement.RELATED)
                                                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
                                                                         .addComponent(name_text)
-                                                                        .addComponent(id_text, GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE))))
-                                                .addGap(126))))
-                        .addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-                                .addGap(237)
-                                .addComponent(btn_order)
-                                .addContainerGap(256, Short.MAX_VALUE))
+                                                                        .addComponent(id_text, GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                                                                        .addComponent(sex_text, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(age_text, GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                                                        .addComponent(tel_text, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE))
+                                                        )
+                                                )
+                                                .addGap(126)
+                                        )
+                                )
+                        )
         );
         gl_contentPane.setVerticalGroup(
                 gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -165,25 +162,24 @@ public class ClientAddView extends JFrame{
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
                                         .addComponent(label_1)
                                         .addComponent(name_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(37)
+                                .addGap(31)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
                                         .addComponent(label_2)
                                         .addComponent(sex_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(38)
+                                .addGap(31)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
                                         .addComponent(label_3)
                                         .addComponent(age_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(30)
+                                .addGap(31)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
                                         .addComponent(label_4)
                                         .addComponent(tel_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(37)
+                                .addGap(50)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
                                         .addComponent(btn_add, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btn_return))
-                                .addPreferredGap(ComponentPlacement.UNRELATED)
-                                .addComponent(btn_order)
-                                .addContainerGap(17, Short.MAX_VALUE))
+                                        .addComponent(btn_order, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_return, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+                        )
         );
         contentPane.setLayout(gl_contentPane);
 
