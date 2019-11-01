@@ -194,9 +194,9 @@ public class RoomView extends JFrame {
                 v.add(rs.getInt("room_id"));
 
                 if ("0".equals(rs.getString("type"))){
-                    v.add("单人间");
+                    v.add("标准房");
                 } else if ("1".equals(rs.getString("type"))){
-                    v.add("双人间");
+                    v.add("高级房");
                 } else if ("2".equals(rs.getString("type"))){
                     v.add("商务房");
                 }

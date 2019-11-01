@@ -56,7 +56,7 @@ public class LoginView extends JFrame{
 		setTitle("\u9152\u5E97\u7BA1\u7406\u7CFB\u7EDF");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 557, 444);
+		setBounds(100, 100, 540, 480);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -90,9 +90,10 @@ public class LoginView extends JFrame{
 		btn_cancel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
 		
 		password_text = new JPasswordField();
-		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(LoginView.class.getResource("/image/Hotel.png")));
+
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(LoginView.class.getResource("/image/Hotel.png")));
+
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -103,7 +104,7 @@ public class LoginView extends JFrame{
 						.addComponent(password))
 					.addGap(39)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
 						.addComponent(userName_text, GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
 						.addComponent(password_text))
 					.addContainerGap(127, Short.MAX_VALUE))
@@ -118,7 +119,7 @@ public class LoginView extends JFrame{
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(33)
-					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
+					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
 					.addGap(27)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(password)
