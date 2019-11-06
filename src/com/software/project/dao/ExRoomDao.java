@@ -54,7 +54,9 @@ public class ExRoomDao {
     public int delete(Connection con, String cid) throws Exception{
         // TODO Auto-generated method stub
         String sql="delete from tb_order where client_id=?";
+        //String sql1="update tb_order set housing=? where client_id=?";
         PreparedStatement pstmt=con.prepareStatement(sql);
+        //pstmt.setBoolean(1, false);
         pstmt.setString(1, cid);
         return pstmt.executeUpdate();
     }

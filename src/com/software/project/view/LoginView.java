@@ -159,8 +159,14 @@ public class LoginView extends JFrame{
 			con=dbUtil.getCon();
 			User currentUser=userDao.login(con, user);
 			if(currentUser!=null){
-				dispose();
-				new MainView().setVisible(true);
+				if ("user".equals(currentUser.getUserName())){
+					dispose();
+					new MainView().setVisible(true);
+				}
+				if ("manager".equals(currentUser.getUserName())){
+					dispose();
+					new ManagerView().setVisible(true);
+				}
 			}else{
 				JOptionPane.showMessageDialog(null, "用户名或者密码错误！");
 			}
