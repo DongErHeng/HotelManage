@@ -5,4 +5,9 @@
 
 将DBUtil.java类中的用户名、密码改为自己数据库的用户名密码
 
-LoginView界面：用户名user，密码password
+LoginView界面：
+
+|login|用户名|密码|
+|-----|-----|-----|
+|MainView|user|password|
+|ManagerView|manager|password|
