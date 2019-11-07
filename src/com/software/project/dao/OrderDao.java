@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 public class OrderDao {
     public int add(Connection con, Order order)throws Exception {
         // TODO Auto-generated method stub
-        String sql = "insert into tb_order values(null,?,?,?,?,?)";
+        String sql = "insert into tb_order values(null,?,?,?,?,?,1)";
         RoomDao roomDao = new RoomDao();
         PreparedStatement pstmt=con.prepareStatement(sql);
         pstmt.setString(1, order.getClient_id());
