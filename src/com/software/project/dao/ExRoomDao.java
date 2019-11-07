@@ -8,6 +8,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class ExRoomDao {
+
+    /**
+     * 全部订单信息查询
+     * @param con
+     * @return
+     */
+    public ResultSet getAllList(Connection con) throws Exception{
+        // TODO Auto-generated method stub
+        String sql = "select * from tb_order";
+        PreparedStatement pstmt=con.prepareStatement(sql);
+        return pstmt.executeQuery();
+    }
+
     /**
      * 订单信息查询
      * @param con
