@@ -36,6 +36,7 @@ public class ExRoomDao {
         if(StringUtil.isNotEmpty(exRoom.getRoom_id()+"")) {
             sb.append(" and tb_order.room_id like'%"+exRoom.getRoom_id()+"%'");
         }
+        sb.append(" and tb_order.housing = 1");
         PreparedStatement pstmt=con.prepareStatement(sb.toString().replaceFirst("and", "where"));
         return pstmt.executeQuery();
     }
@@ -46,31 +47,31 @@ public class ExRoomDao {
      * @param exRoom
      * @return
      */
-    public int update(Connection con, Order exRoom)throws Exception {
+    public int update(Connection con, Order exRoom ,int order_id)throws Exception {
         // TODO Auto-generated method stub
-        String sql="update tb_order set room_id=?,comedate=?,days=?,leavedate=? where client_id=?";
+        String sql="update tb_order set room_id=?,comedate=?,days=?,leavedate=? where order_id=?";
         PreparedStatement pstmt=con.prepareStatement(sql);
         pstmt.setInt(1, exRoom.getRoom_id());
         pstmt.setString(2, exRoom.getComedate());
         pstmt.setInt(3, exRoom.getDays());
         pstmt.setString(4, exRoom.getLeavedate());
-        pstmt.setString(5, exRoom.getClient_id());
+        pstmt.setInt(5, order_id);
         return pstmt.executeUpdate();
     }
 
     /**
      * 退房事件处理
      * @param con
-     * @param cid
+     * @param order_id
      * @return
      */
-    public int delete(Connection con, String cid) throws Exception{
+    public int delete(Connection con, int order_id) throws Exception{
         // TODO Auto-generated method stub
-        String sql="delete from tb_order where client_id=?";
+        String sql="update tb_order set housing=0 where order_id=?";
         //String sql1="update tb_order set housing=? where client_id=?";
         PreparedStatement pstmt=con.prepareStatement(sql);
         //pstmt.setBoolean(1, false);
-        pstmt.setString(1, cid);
+        pstmt.setInt(1, order_id);
         return pstmt.executeUpdate();
     }
 

@@ -49,6 +49,7 @@ public class OrderView extends JFrame {
     private JTextField exdate_text;
     private JScrollPane scrollPane;
     private JTextField leave_text;
+    private String order_id = "";
 
     /**
      * Launch the application.
@@ -357,8 +358,10 @@ public class OrderView extends JFrame {
     private void exTableMousePressed(MouseEvent evt) {
         // TODO Auto-generated method stub
         int row=this.exTable.getSelectedRow();
+
         this.cid_text.setText((String)exTable.getValueAt(row, 1));
         this.rid_text1.setText((String)exTable.getValueAt(row, 2));
+        order_id = exTable.getValueAt(row,0).toString();
         this.ocdate_text.setText((String)exTable.getValueAt(row, 3));
         this.exday_text.setText((String)exTable.getValueAt(row, 4));
         this.leave_text.setText((String)exTable.getValueAt(row, 5));
@@ -389,7 +392,7 @@ public class OrderView extends JFrame {
             con=dbUtil.getCon();
             roomDao.update(con,oldRid,false);
             roomDao.update(con,newRid,true);
-            int modifyNum=exRoomDao.update(con, exRoom);
+            int modifyNum=exRoomDao.update(con, exRoom, Integer.parseInt(order_id));
             if(modifyNum==1){
                 JOptionPane.showMessageDialog(null, "换房成功");
                 this.resetValue();
@@ -444,7 +447,7 @@ public class OrderView extends JFrame {
             try{
                 con=dbUtil.getCon();
                 roomDao.update(con,oldRid,false);
-                int deleteNum=exRoomDao.delete(con, cid);
+                int deleteNum=exRoomDao.delete(con, Integer.parseInt(order_id));
                 if(deleteNum==1){
                     JOptionPane.showMessageDialog(null, "已退房");
                     this.resetValue();

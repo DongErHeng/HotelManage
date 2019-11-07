@@ -1,5 +1,6 @@
 package com.software.project.view;
 
+import com.software.project.dao.AccountDao;
 import com.software.project.dao.ExRoomDao;
 import com.software.project.dao.RoomDao;
 import com.software.project.model.Room;
@@ -34,8 +35,10 @@ public class ManagerView extends JFrame {
 
     private JPanel contentPane;
     private JTable roomTable;
+    private JTextField account_text;
     private DBUtil dbUtil = new DBUtil();
     private ExRoomDao exRoomDao = new ExRoomDao();
+    private AccountDao accountDao = new AccountDao();
 
     /**
      * Launch the application.
@@ -74,7 +77,23 @@ public class ManagerView extends JFrame {
         btn_search.setForeground(new Color(139, 0, 0));
         btn_search.setFont(new Font("华文行楷", Font.PLAIN, 28));
 
+        JButton btn_account = new JButton("\u5408\u8ba1");
+        btn_account.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btn_accountActionPerformed(evt);
+            }
+
+        });
+        btn_account.setForeground(new Color(139, 0, 0));
+        btn_account.setFont(new Font("华文行楷", Font.PLAIN, 28));
+
         JScrollPane scrollPane = new JScrollPane();
+
+        account_text = new JTextField();
+        account_text.setEnabled(false);
+        account_text.setBackground(new Color(139, 0, 0));
+        account_text.setFont(new Font("华文行楷", Font.PLAIN, 28));
+        account_text.setColumns(10);
 
         JButton btn_return = new JButton(" \u9000\u51fa");
         btn_return.addMouseListener(new MouseAdapter() {
@@ -97,11 +116,17 @@ public class ManagerView extends JFrame {
                                 .addContainerGap(24, Short.MAX_VALUE))
                         .addGroup(gl_contentPane.createSequentialGroup()
                                 .addContainerGap(459, Short.MAX_VALUE)
-                                .addComponent(btn_return, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_return, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
                                 .addGap(38))
                         .addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-                                .addGap(352)
+                                .addContainerGap(459, Short.MAX_VALUE)
                                 .addComponent(btn_search, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+                                .addGap(38))
+                        .addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(account_text, GroupLayout.PREFERRED_SIZE, 250, GroupLayout.PREFERRED_SIZE)
+                                .addGap(20)
+                                .addComponent(btn_account, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(258, Short.MAX_VALUE))
         );
         gl_contentPane.setVerticalGroup(
@@ -111,8 +136,12 @@ public class ManagerView extends JFrame {
                                 .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 311, GroupLayout.PREFERRED_SIZE)
                                 .addGap(21)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-                                        .addComponent(btn_return)
+                                        .addComponent(account_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_account)
                                         .addComponent(btn_search))
+                                .addGap(21)
+                                .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+                                        .addComponent(btn_return))
                         )
         );
 
@@ -152,12 +181,30 @@ public class ManagerView extends JFrame {
     }
 
     /**
-     * 算账
+     * 合计
      * @param evt
      */
     private void btn_accountActionPerformed(ActionEvent evt) {
         // TODO Auto-generated method stub
-
+        int account = 0;
+        Connection con=null;
+        try{
+            con=dbUtil.getCon();
+            ResultSet rs=accountDao.getAllAccount(con);
+            while(rs.next()){
+                account = account + rs.getInt("days") * rs.getInt("price");
+            }
+            this.account_text.setText(account+"");
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try {
+                dbUtil.closeCon(con);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
