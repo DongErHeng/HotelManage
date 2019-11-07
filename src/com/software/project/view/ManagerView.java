@@ -1,5 +1,6 @@
 package com.software.project.view;
 
+import com.software.project.dao.ExRoomDao;
 import com.software.project.dao.RoomDao;
 import com.software.project.model.Room;
 import com.software.project.util.DBUtil;
@@ -34,7 +35,7 @@ public class ManagerView extends JFrame {
     private JPanel contentPane;
     private JTable roomTable;
     private DBUtil dbUtil = new DBUtil();
-    private RoomDao roomDao = new RoomDao();
+    private ExRoomDao exRoomDao = new ExRoomDao();
 
     /**
      * Launch the application.
@@ -58,7 +59,7 @@ public class ManagerView extends JFrame {
     public ManagerView() {
         setTitle("\u67E5\u8BE2");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 669, 558);
+        setBounds(100, 100, 778, 558);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -92,14 +93,14 @@ public class ManagerView extends JFrame {
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
                                         .addGroup(gl_contentPane.createSequentialGroup()
                                                 .addContainerGap()
-                                                .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 603, GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 730, GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(24, Short.MAX_VALUE))
                         .addGroup(gl_contentPane.createSequentialGroup()
                                 .addContainerGap(459, Short.MAX_VALUE)
                                 .addComponent(btn_return, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
                                 .addGap(38))
                         .addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-                                .addGap(243)
+                                .addGap(352)
                                 .addComponent(btn_search, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(258, Short.MAX_VALUE))
         );
@@ -147,7 +148,7 @@ public class ManagerView extends JFrame {
      */
     private void btn_searchActionPerformed(ActionEvent evt) {
         // TODO Auto-generated method stub
-
+        fillTable();
     }
 
     /**
@@ -161,34 +162,23 @@ public class ManagerView extends JFrame {
 
     /**
      * 初始化表格数据
-     * @param room
      */
-    private void fillTable(Room room) {
+    private void fillTable() {
         // TODO Auto-generated method stub
         DefaultTableModel dtm=(DefaultTableModel) roomTable.getModel();
         dtm.setRowCount(0); // 设置成0行
         Connection con=null;
         try{
             con=dbUtil.getCon();
-            ResultSet rs=roomDao.list(con, room);
+            ResultSet rs=exRoomDao.getAllList(con);
             while(rs.next()){
                 Vector v=new Vector();
-                v.add(rs.getInt("room_id"));
-
-                if ("0".equals(rs.getString("type"))){
-                    v.add("标准房");
-                } else if ("1".equals(rs.getString("type"))){
-                    v.add("高级房");
-                } else if ("2".equals(rs.getString("type"))){
-                    v.add("商务房");
-                }
-                v.add(rs.getString("price"));
-
-                if (rs.getBoolean("state")){
-                    v.add("已入住");
-                } else {
-                    v.add("空闲");
-                }
+                v.add(rs.getInt("order_id"));
+                v.add(rs.getString("client_id"));
+                v.add(rs.getString("room_id"));
+                v.add(rs.getString("comedate"));
+                v.add(rs.getString("days"));
+                v.add(rs.getString("leavedate"));
                 dtm.addRow(v);
             }
         }catch(Exception e){
